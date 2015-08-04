@@ -45,6 +45,6 @@ export default Ember.Component.extend({
     this.removeObserver('maxDate');
     this.removeObserver('minDate');
 
-    this.$().datetimepicker().destroy();
+    this.$().data('DateTimePicker').destroy();
   })
 });
