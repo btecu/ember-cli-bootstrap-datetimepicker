@@ -56,6 +56,9 @@
     "ember-cli-htmlbars": "0.7.9"
   },
   "ember-addon": {
+    "after": [
+      "ember-cli-moment-shim"
+    ],
     "configPath": "tests/dummy/config"
   }
 }
