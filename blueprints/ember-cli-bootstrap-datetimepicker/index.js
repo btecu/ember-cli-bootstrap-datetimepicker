@@ -6,7 +6,7 @@ module.exports = {
   afterInstall: function(options) {
     var blueprint = this;
 
-    return blueprint.addAddonToProject('ember-cli-moment-shim', '0.6.0').then(function() {
+    return blueprint.addAddonToProject('ember-cli-moment-shim', '0.6.2').then(function() {
       return blueprint.addBowerPackageToProject('eonasdan-bootstrap-datetimepicker', '4.15.35');
     });
   }
