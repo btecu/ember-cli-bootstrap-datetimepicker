@@ -18,7 +18,8 @@ export default Ember.Component.extend({
       showClear: this.getWithDefault('showClear', defaults.showClear),
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
-      viewMode: this.getWithDefault('viewMode', defaults.viewMode)
+      viewMode: this.getWithDefault('viewMode', defaults.viewMode),
+      locale: this.getWithDefault('locale', defaults.locale),
     }).on('dp.change', e => {
       // Convert moment to js date
       let newDate = e.date && e.date.toDate();
