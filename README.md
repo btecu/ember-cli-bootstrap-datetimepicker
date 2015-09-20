@@ -4,6 +4,12 @@ Date and time picker addon based on bootstrap.
 It uses [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker) and [moment.js](https://github.com/jasonmit/ember-cli-moment-shim).
 
 
+## Requirements
+* Bootstrap 3
+* Ember >= 1.13.0
+* Ember CLI
+
+
 ## Installation
 
 ```bash
