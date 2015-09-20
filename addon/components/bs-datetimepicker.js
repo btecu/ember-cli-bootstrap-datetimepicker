@@ -21,8 +21,8 @@ export default Ember.Component.extend({
       viewMode: this.getWithDefault('viewMode', defaults.viewMode),
       locale: this.getWithDefault('locale', defaults.locale),
     }).on('dp.change', e => {
-      // Convert moment to js date
-      let newDate = e.date && e.date.toDate();
+      // Convert moment to js date or default to null
+      let newDate = e.date && e.date.toDate() || null;
 
       this.set('date', newDate);
       this.sendAction('change', newDate);
