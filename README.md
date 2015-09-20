@@ -165,6 +165,17 @@ The default view to display when the picker is shown.
 *Note:* To limit the picker to selecting, for instance the year and month, use format: `MM/YYYY`
 
 
+#### locale
+
+Default: `moment.locale()`
+
+Accepts: `string`, `moment.local('locale')`
+
+```handlebars
+{{bs-datetimepicker date=myDate locale="de"}}
+```
+
+Use the specified locale for text rendering
 
 ## License
 
