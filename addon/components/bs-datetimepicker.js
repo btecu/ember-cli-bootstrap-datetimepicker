@@ -13,13 +13,13 @@ export default Ember.Component.extend({
       date: this.getWithDefault('date', defaults.defaultDate),
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
+      locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),
       showClear: this.getWithDefault('showClear', defaults.showClear),
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
-      viewMode: this.getWithDefault('viewMode', defaults.viewMode),
-      locale: this.getWithDefault('locale', defaults.locale),
+      viewMode: this.getWithDefault('viewMode', defaults.viewMode)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
       let newDate = e.date && e.date.toDate() || null;
