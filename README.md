@@ -171,6 +171,22 @@ Clicking the *Today* button will set the calendar view and set the date to `now`
 
 
 
+#### useCurrent
+
+Default: `false`
+
+Accepts: `bolean`, 'year', 'month', 'day', 'hour', 'minute'
+
+```handlebars
+{{bs-datetimepicker date=myDate useCurrent='day'}}
+```
+
+If the date is not set, the first time the widget opens will set the date
+to current moment (if `true`). Granularity can be specified as a `string`.
+
+
+
+
 #### viewMode
 
 Default: `days`
