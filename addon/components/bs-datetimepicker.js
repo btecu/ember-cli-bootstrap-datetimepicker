@@ -1,13 +1,19 @@
 import Ember from 'ember';
 import layout from '../templates/components/bs-datetimepicker';
 
-export default Ember.Component.extend({
-  layout: layout,
+const {
+  $,
+  Component
+} = Ember;
+
+export default Component.extend({
+  layout,
   tagName: 'div',
   classNames: ['input-group date'],
 
-  setupDatepicker: Ember.on('didInsertElement', function() {
-    let defaults = Ember.$.fn.datetimepicker.defaults;
+  didInsertElement() {
+    this._super(...arguments);
+    let { defaults } = $.fn.datetimepicker;
 
     this.$().datetimepicker({
       date: this.getWithDefault('date', defaults.defaultDate),
@@ -39,13 +45,14 @@ export default Ember.Component.extend({
     this.addObserver('minDate', function() {
       this.$().data('DateTimePicker').minDate(this.get('minDate'));
     });
-  }),
+  },
 
-  destroyDatepicker: Ember.on('willDestroyElement', function() {
+  willDestroyElement() {
+    this._super(...arguments);
     this.removeObserver('date');
     this.removeObserver('maxDate');
     this.removeObserver('minDate');
 
     this.$().data('DateTimePicker').destroy();
-  })
+  }
 });
