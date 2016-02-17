@@ -4,10 +4,12 @@ module.exports = {
   normalizeEntityName: function() {},
 
   afterInstall: function(options) {
-    var blueprint = this;
-
-    return blueprint.addAddonToProject('ember-cli-moment-shim', '0.6.2').then(function() {
-      return blueprint.addBowerPackageToProject('eonasdan-bootstrap-datetimepicker', '4.17.37');
-    });
+    /* Use custom build until official is published
+      https://github.com/Eonasdan/bootstrap-datetimepicker/issues/1438
+    */
+    return this.addPackagesToProject([
+      { name: 'ember-cli-moment-shim', target: '1.0.0' },
+      { name: 'eonasdan-bootstrap-datetimepicker-ie ', target: '4.17.42' }
+    ]);
   }
 };
