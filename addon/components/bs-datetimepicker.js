@@ -10,6 +10,7 @@ export default Component.extend({
   layout,
   tagName: 'div',
   classNames: ['input-group date'],
+  iconClasses: ['glyphicon glyphicon-calendar'],
 
   didInsertElement() {
     this._super(...arguments);
