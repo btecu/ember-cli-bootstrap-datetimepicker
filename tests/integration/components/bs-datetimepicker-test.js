@@ -5,22 +5,21 @@ moduleForComponent('bs-datetimepicker', 'Integration | Component | bs datetimepi
   integration: true
 });
 
-test('it renders', function(assert) {
+test('it renders iconClasses and iconText', function(assert) {
   assert.expect(2);
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs`{{bs-datetimepicker date='01/01/2016' classes='material-icons' iconText='date-range'}}`);
 
-  this.render(hbs`{{bs-datetimepicker}}`);
+  assert.equal(this.$('.input-group-addon i').attr('class'), 'material-icons');
+  // Slice off the zero-width-non-joiner character
+  assert.equal(this.$('.input-group-addon i').text().trim().slice(0, -1), 'date-range');
+});
 
-  assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bs-datetimepicker}}
-      template block text
-    {{/bs-datetimepicker}}
-  `);
+test('it renders with default icon classes', function(assert) {
+  assert.expect(1);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  this.render(hbs`{{bs-datetimepicker date='01/01/2016'}}`);
+
+  assert.equal(this.$('.input-group-addon i').attr('class'), 'glyphicon glyphicon-calendar');
 });
