@@ -8,11 +8,10 @@ moduleForComponent('bs-datetimepicker', 'Integration | Component | bs datetimepi
 test('it renders iconClasses and iconText', function(assert) {
   assert.expect(2);
 
-  this.render(hbs`{{bs-datetimepicker date='01/01/2016' classes='material-icons' iconText='date-range'}}`);
+  this.render(hbs`{{bs-datetimepicker date='01/01/2016' iconClasses='material-icons' iconText='date-range'}}`);
 
   assert.equal(this.$('.input-group-addon i').attr('class'), 'material-icons');
-  // Slice off the zero-width-non-joiner character
-  assert.equal(this.$('.input-group-addon i').text().trim().slice(0, -1), 'date-range');
+  assert.equal(this.$('.input-group-addon i').text().trim(), 'date-range');
 });
 
 test('it renders with default icon classes', function(assert) {
