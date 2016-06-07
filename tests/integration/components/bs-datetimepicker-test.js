@@ -15,7 +15,6 @@ test('it renders iconClasses and iconText', function(assert) {
   assert.equal(this.$('.input-group-addon i').text().trim().slice(0, -1), 'date-range');
 });
 
-
 test('it renders with default icon classes', function(assert) {
   assert.expect(1);
 

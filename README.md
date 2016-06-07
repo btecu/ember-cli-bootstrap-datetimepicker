@@ -74,13 +74,24 @@ If `false`, the textbox will not be given focus when the picker is shown
 
 Default: `false`
 
-Accepts: `strint`
+Accepts: `string`
 
 ```handlebars
 {{bs-datetimepicker date=myDate format='MM/DD/YYYY'}}
 ```
 
 See [momentjs'](http://momentjs.com/docs/#/displaying/format/) docs for valid formats. Format also dictates what components are shown, e.g. `MM/dd/YYYY` will not display the time picker.
+
+
+#### iconClasses, iconText
+
+Defaults: `glyphicon glyphicon-calendar`, '&zwnj;'
+
+Accepts: `string`
+
+```handlebars
+{{bs-datetimepicker iconClasses='material-icons' iconText='face'}}
+```
 
 
 
@@ -183,7 +194,6 @@ Accepts: `bolean`, 'year', 'month', 'day', 'hour', 'minute'
 
 If the date is not set, the first time the widget opens will set the date
 to current moment (if `true`). Granularity can be specified as a `string`.
-
 
 
 
