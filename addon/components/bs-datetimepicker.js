@@ -28,7 +28,18 @@ export default Component.extend({
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
       useCurrent: this.getWithDefault('useCurrent', false),
-      viewMode: this.getWithDefault('viewMode', defaults.viewMode)
+      viewMode: this.getWithDefault('viewMode', defaults.viewMode),
+      icons: {
+        time: this.getWithDefault('iconTime', defaults.icons.time),
+        date: this.getWithDefault('iconDate', defaults.icons.date),
+        up: this.getWithDefault('iconUp', defaults.icons.up),
+        down: this.getWithDefault('iconDown', defaults.icons.down),
+        previous: this.getWithDefault('iconPrevious', defaults.icons.previous),
+        next: this.getWithDefault('iconNext', defaults.icons.next),
+        today: this.getWithDefault('iconToday', defaults.icons.today),
+        clear: this.getWithDefault('iconClear', defaults.icons.clear),
+        close: this.getWithDefault('iconClose', defaults.icons.close)
+      }
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
       let newDate = e.date && e.date.toDate() || null;
