@@ -85,7 +85,7 @@ See [momentjs'](http://momentjs.com/docs/#/displaying/format/) docs for valid fo
 
 #### iconClasses, iconText
 
-Defaults: `glyphicon glyphicon-calendar`, '&zwnj;'
+Defaults: `glyphicon glyphicon-calendar`, [none]
 
 Accepts: `string`
 
@@ -93,8 +93,31 @@ Accepts: `string`
 {{bs-datetimepicker iconClasses='material-icons' iconText='face'}}
 ```
 
+`iconClasses` is used to modify the icon button to the right of the datetime picker input.  If `iconText` is set, 
+the button will have a text label in addition to the icon.
 
+#### icon[Up, Down, Date, Time, Next, Previous, Today, Clear, Close]
 
+Defaults: Bootstrap Provided Glyphicons
+
+Accepts: `string`
+
+```
+{{bs-datetimepicker 
+  iconUp="fa fa-chevron-up"
+  iconDown="fa fa-cheveron-down"
+  iconDate="fa fa-calendar"
+  iconTime="fa fa-clock-o"
+  iconNext="fa fa-angle-double-right"
+  iconPrevious="fa fa-angle-double-left"
+  iconToday="fa fa-dot-circle-o"
+  iconClear="fa fa-trash"
+  iconClose="fa fa-times"
+}}
+```
+The individual icons used in the calendar can be modified by setting the different icon classes.  The example above
+shows how the default Boostrap glyphicons can be replaced with equivalent Font Awesome icons.
+  
 #### locale
 
 Default: `moment.locale()`

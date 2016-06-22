@@ -17,6 +17,8 @@ export default Component.extend({
     this._super(...arguments);
     let { defaults } = $.fn.datetimepicker;
 
+    console.info(this.get('icons'));
+
     this.$().datetimepicker({
       date: this.getWithDefault('date', defaults.defaultDate),
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
@@ -28,7 +30,18 @@ export default Component.extend({
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
       useCurrent: this.getWithDefault('useCurrent', false),
-      viewMode: this.getWithDefault('viewMode', defaults.viewMode)
+      viewMode: this.getWithDefault('viewMode', defaults.viewMode),
+      icons: {
+        time: this.getWithDefault('iconTime', this.getWithDefault('config.icons.time', defaults.icons.time)),
+        date: this.getWithDefault('iconDate', this.getWithDefault('config.icons.date', defaults.icons.date)),
+        up: this.getWithDefault('iconUp', this.getWithDefault('config.icons.up', defaults.icons.up)),
+        down: this.getWithDefault('iconDown', this.getWithDefault('config.icons.down', defaults.icons.down)),
+        previous: this.getWithDefault('iconPrevious', this.getWithDefault('config.icons.previous', defaults.icons.previous)),
+        next: this.getWithDefault('iconNext', this.getWithDefault('config.icons.next', defaults.icons.next)),
+        today: this.getWithDefault('iconToday', this.getWithDefault('config.icons.today', defaults.icons.today)),
+        clear: this.getWithDefault('iconClear', this.getWithDefault('config.icons.clear', defaults.icons.clear)),
+        close: this.getWithDefault('iconClose', this.getWithDefault('config.icons.close', defaults.icons.close))
+      }
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
       let newDate = e.date && e.date.toDate() || null;
