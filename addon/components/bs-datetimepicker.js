@@ -17,10 +17,23 @@ export default Component.extend({
     this._super(...arguments);
     let { defaults } = $.fn.datetimepicker;
 
+    let icons = {
+      clear: this.getWithDefault('config.icons.clear', defaults.icons.clear),
+      close: this.getWithDefault('config.icons.close', defaults.icons.close),
+      date: this.getWithDefault('config.icons.date', defaults.icons.date),
+      down: this.getWithDefault('config.icons.down', defaults.icons.down),
+      next: this.getWithDefault('config.icons.next', defaults.icons.next),
+      previous: this.getWithDefault('config.icons.previous', defaults.icons.previous),
+      time: this.getWithDefault('config.icons.time', defaults.icons.time),
+      today: this.getWithDefault('config.icons.today', defaults.icons.today),
+      up: this.getWithDefault('config.icons.up', defaults.icons.up)
+    };
+
     this.$().datetimepicker({
       date: this.getWithDefault('date', defaults.defaultDate),
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
+      icons,
       locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),

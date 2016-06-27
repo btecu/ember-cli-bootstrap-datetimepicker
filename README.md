@@ -83,15 +83,35 @@ Accepts: `string`
 See [momentjs'](http://momentjs.com/docs/#/displaying/format/) docs for valid formats. Format also dictates what components are shown, e.g. `MM/dd/YYYY` will not display the time picker.
 
 
+
 #### iconClasses, iconText
 
-Defaults: `glyphicon glyphicon-calendar`, '&zwnj;'
+Defaults: `glyphicon glyphicon-calendar`, ''
 
 Accepts: `string`
 
 ```handlebars
 {{bs-datetimepicker iconClasses='material-icons' iconText='face'}}
 ```
+
+Replaces the calendar icon class and text.
+
+
+#### icons
+
+Defaults: `component defaults`
+
+```js
+'ember-cli-bootstrap-datetimepicker': {
+  icons: {
+    next: 'chevron right',
+    previous: 'chevron left'
+  }
+}
+```
+
+Replaces icon classes globally.
+Supported icons include `clear`, `close`, `date`, `down`, `next`, `previous`, `time`, `today` and `up`.
 
 
 
