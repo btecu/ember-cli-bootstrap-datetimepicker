@@ -51,6 +51,7 @@ export default Component.extend({
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
       useCurrent: this.getWithDefault('useCurrent', false),
+      viewDate: this.getWithDefault('viewDate', defaults.viewDate),
       viewMode: this.getWithDefault('viewMode', defaults.viewMode)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null

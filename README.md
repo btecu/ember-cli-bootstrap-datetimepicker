@@ -207,6 +207,20 @@ to current moment (if `true`). Granularity can be specified as a `string`.
 
 
 
+#### viewDate
+
+Default: `false`
+
+Accepts: `date`, `moment`, `string`
+
+```handlebars
+{{bs-datetimepicker date=myDate viewDate=customDate}}
+```
+
+Pre-set the date / time, allowing to change default time from 12:00 AM.
+
+
+
 #### viewMode
 
 Default: `days`
