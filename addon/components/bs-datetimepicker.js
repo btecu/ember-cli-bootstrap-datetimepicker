@@ -3,19 +3,29 @@ import layout from '../templates/components/bs-datetimepicker';
 
 const {
   $,
-  Component
+  Component,
+  computed
 } = Ember;
+
+const {
+  defaults
+} = $.fn.datetimepicker;
 
 export default Component.extend({
   layout,
   tagName: 'div',
   classNames: ['input-group date'],
-  iconClasses: ['glyphicon glyphicon-calendar'],
-  iconText: '',
+
+  iconClasses: computed('isTime', function() {
+    if (this.get('isTime')) {
+      return this.getWithDefault('config.icons.time', defaults.icons.time);
+    }
+
+    return this.getWithDefault('config.icons.date', defaults.icons.date);
+  }),
 
   didInsertElement() {
     this._super(...arguments);
-    let { defaults } = $.fn.datetimepicker;
 
     let icons = {
       clear: this.getWithDefault('config.icons.clear', defaults.icons.clear),

@@ -84,19 +84,6 @@ See [momentjs'](http://momentjs.com/docs/#/displaying/format/) docs for valid fo
 
 
 
-#### iconClasses, iconText
-
-Defaults: `glyphicon glyphicon-calendar`, ''
-
-Accepts: `string`
-
-```handlebars
-{{bs-datetimepicker iconClasses='material-icons' iconText='face'}}
-```
-
-Replaces the calendar icon class and text.
-
-
 #### icons
 
 Defaults: `component defaults`
@@ -112,6 +99,9 @@ Defaults: `component defaults`
 
 Replaces icon classes globally.
 Supported icons include `clear`, `close`, `date`, `down`, `next`, `previous`, `time`, `today` and `up`.
+If inner html has to be set (Material Icons), use `::after` pseudo selector.
+
+*Note:* When using only the time picker, pass `isTime=true` so that the correct icon is displayed.
 
 
 
