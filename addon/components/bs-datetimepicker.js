@@ -15,6 +15,9 @@ export default Component.extend({
   layout,
   tagName: 'div',
   classNames: ['input-group date'],
+  placeholder: '',
+
+  openOnFocus: false,
 
   iconClasses: computed('isTime', function() {
     if (this.get('isTime')) {
@@ -81,5 +84,13 @@ export default Component.extend({
     this.removeObserver('minDate');
 
     this.$().data('DateTimePicker').destroy();
+  },
+
+  actions: {
+    focus() {
+      if (this.get('openOnFocus')) {
+        this.$().data('DateTimePicker').show();
+      }
+    }
   }
 });

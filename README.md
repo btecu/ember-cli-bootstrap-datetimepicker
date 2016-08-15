@@ -147,6 +147,20 @@ Prevents date/time selections before this date
 
 
 
+#### openOnFocus
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate openOnFocus=true}}
+```
+
+Opens the picker on input focus
+
+
+
 #### showClear
 
 Default: `false`
