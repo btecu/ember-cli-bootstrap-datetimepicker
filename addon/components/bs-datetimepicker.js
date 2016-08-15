@@ -44,6 +44,7 @@ export default Component.extend({
 
     this.$().datetimepicker({
       date: this.getWithDefault('date', defaults.defaultDate),
+      disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
       icons,

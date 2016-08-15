@@ -147,6 +147,20 @@ Prevents date/time selections before this date
 
 
 
+#### disabledDates
+
+Default: `false`
+
+Accepts: `array` of [`date`, `moment`, `string`]
+
+```handlebars
+{{bs-datetimepicker disabledDates=disabledDates}}
+```
+
+Disables selection of dates in the array, e.g. holidays
+
+
+
 #### openOnFocus
 
 Default: `false`
