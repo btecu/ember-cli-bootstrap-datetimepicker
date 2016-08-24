@@ -147,6 +147,20 @@ Prevents date/time selections before this date
 
 
 
+#### daysOfWeekDisabled
+
+Default: []
+
+Accepts: `array` of [`number`]
+
+```handlebars
+{{bs-datetimepicker daysOfWeekDisabled=daysOfWeekDisabled}}
+```
+
+Disables selection of days in the array, e.g. sundays
+
+
+
 #### disabledDates
 
 Default: `false`
