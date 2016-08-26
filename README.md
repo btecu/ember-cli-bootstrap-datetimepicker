@@ -56,7 +56,36 @@ Sets the picker date/time.
 
 
 
-#### en/disabledHours
+#### daysOfWeekDisabled
+
+Default: []
+
+Accepts: `array` of [`number`]
+
+```handlebars
+{{bs-datetimepicker daysOfWeekDisabled=daysOfWeekDisabled}}
+```
+
+Disables selection of days in the array, e.g. sundays.
+
+
+
+#### disabledDates / enabledDates
+
+Default: `false`
+
+Accepts: `array` of [`date`, `moment`, `string`]
+
+```handlebars
+{{bs-datetimepicker disabledDates=disabledDates}}
+{{bs-datetimepicker enabledDates=enabledDates}}
+```
+
+Disables / enables selection of dates in the array, e.g. holidays.
+
+
+
+#### disabledHours / enabledHours
 
 Default: `false`
 
@@ -67,7 +96,7 @@ Accepts: `array` of [`number`]
 {{bs-datetimepicker date=myDate enabledHours=enabledHours}}
 ```
 
-Disables/enables selection of dates in the array.
+Disables / enables selection of hours in the array, affecting all days.
 
 
 
@@ -159,35 +188,6 @@ Accepts: `date`, `moment`, `string`
 ```
 
 Prevents date/time selections before this date.
-
-
-
-#### daysOfWeekDisabled
-
-Default: []
-
-Accepts: `array` of [`number`]
-
-```handlebars
-{{bs-datetimepicker daysOfWeekDisabled=daysOfWeekDisabled}}
-```
-
-Disables selection of days in the array, e.g. sundays.
-
-
-
-#### en/disabledDates
-
-Default: `false`
-
-Accepts: `array` of [`date`, `moment`, `string`]
-
-```handlebars
-{{bs-datetimepicker disabledDates=disabledDates}}
-{{bs-datetimepicker enabledDates=enabledDates}}
-```
-
-Disables/enables selection of dates in the array, e.g. holidays.
 
 
 
@@ -312,7 +312,8 @@ The default view to display when the picker is shown.
 
 Default: `{ horizontal: 'auto', vertical: 'auto' }`
 
-Accepts: `object` with all or one of the parameters above (horizontal: 'auto', 'left', 'right'; vertical: 'auto', 'top', 'bottom')
+Accepts: `object` with one or all of the parameters above
+(horizontal: 'auto', 'left', 'right' / vertical: 'auto', 'top', 'bottom')
 
 ```handlebars
 {{bs-datetimepicker date=myDate widgetPositioning=widgetPositioning}}
