@@ -36,7 +36,7 @@ Basic example:
 
 Returns: `date`, `null`
 
-Fired when the date is changed
+Fired when the date is changed.
 
 
 
@@ -52,7 +52,22 @@ Accepts: `date`, `moment`, `string`
 {{bs-datetimepicker date=myDate}}
 ```
 
-Sets the picker date/time
+Sets the picker date/time.
+
+
+
+#### en/disabledHours
+
+Default: `false`
+
+Accepts: `array` of [`number`]
+
+```handlebars
+{{bs-datetimepicker date=myDate disabledHours=disabledHours}}
+{{bs-datetimepicker date=myDate enabledHours=enabledHours}}
+```
+
+Disables/enables selection of dates in the array.
 
 
 
@@ -66,7 +81,7 @@ Accepts: `boolean`
 {{bs-datetimepicker date=myDate focusOnShow=false}}
 ```
 
-If `false`, the textbox will not be given focus when the picker is shown
+If `false`, the textbox will not be given focus when the picker is shown.
 
 
 
@@ -115,7 +130,7 @@ Accepts: `string`, `moment.local('locale')`
 {{bs-datetimepicker date=myDate locale='de'}}
 ```
 
-Use the specified locale for text rendering
+Use the specified locale for text rendering.
 
 
 
@@ -129,7 +144,7 @@ Accepts: `date`, `moment`, `string`
 {{bs-datetimepicker date=myDate maxDate=myMaxDate}}
 ```
 
-Prevents date/time selections after this date
+Prevents date/time selections after this date.
 
 
 
@@ -143,7 +158,7 @@ Accepts: `date`, `moment`, `string`
 {{bs-datetimepicker date=myDate minDate=myMinDate}}
 ```
 
-Prevents date/time selections before this date
+Prevents date/time selections before this date.
 
 
 
@@ -157,11 +172,11 @@ Accepts: `array` of [`number`]
 {{bs-datetimepicker daysOfWeekDisabled=daysOfWeekDisabled}}
 ```
 
-Disables selection of days in the array, e.g. sundays
+Disables selection of days in the array, e.g. sundays.
 
 
 
-#### disabledDates
+#### en/disabledDates
 
 Default: `false`
 
@@ -169,9 +184,10 @@ Accepts: `array` of [`date`, `moment`, `string`]
 
 ```handlebars
 {{bs-datetimepicker disabledDates=disabledDates}}
+{{bs-datetimepicker enabledDates=enabledDates}}
 ```
 
-Disables selection of dates in the array, e.g. holidays
+Disables/enables selection of dates in the array, e.g. holidays.
 
 
 
@@ -185,7 +201,7 @@ Accepts: `boolean`
 {{bs-datetimepicker date=myDate openOnFocus=true}}
 ```
 
-Opens the picker on input focus
+Opens the picker on input focus.
 
 
 
@@ -215,7 +231,7 @@ Accepts: `boolean`
 ```
 
 Show the *Close* button in the icon toolbar.
-Clicking the *Close* button will call `hide()`
+Clicking the *Close* button will call `hide()`.
 
 
 
@@ -231,6 +247,20 @@ Accepts: `boolean`
 
 Show the *Today* button in the icon toolbar.
 Clicking the *Today* button will set the calendar view and set the date to `now`.
+
+
+
+#### sideBySide
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate sideBySide=true}}
+```
+
+Show calendar and time side by side.
 
 
 
@@ -275,6 +305,20 @@ Accepts: 'years', 'months', 'days'
 
 The default view to display when the picker is shown.
 *Note:* To limit the picker to selecting, for instance the year and month, use format: `MM/YYYY`
+
+
+
+#### widgetPositioning
+
+Default: `{ horizontal: 'auto', vertical: 'auto' }`
+
+Accepts: `object` with all or one of the parameters above (horizontal: 'auto', 'left', 'right'; vertical: 'auto', 'top', 'bottom')
+
+```handlebars
+{{bs-datetimepicker date=myDate widgetPositioning=widgetPositioning}}
+```
+
+Will position widget according to the parameters given in object.
 
 
 

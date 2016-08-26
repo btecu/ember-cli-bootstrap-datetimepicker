@@ -46,6 +46,9 @@ export default Component.extend({
       date: this.getWithDefault('date', defaults.defaultDate),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),
       disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
+      disabledHours: this.getWithDefault('disabledHours', defaults.disabledHours),
+      enabledDates: this.getWithDefault('enabledDates', defaults.enabledDates),
+      enabledHours: this.getWithDefault('enabledHours', defaults.enabledHours),
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
       icons,
@@ -55,9 +58,11 @@ export default Component.extend({
       showClear: this.getWithDefault('showClear', defaults.showClear),
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
+      sideBySide: this.getWithDefault('sideBySide', defaults.sideBySide),
       useCurrent: this.getWithDefault('useCurrent', false),
       viewDate: this.getWithDefault('viewDate', defaults.viewDate),
-      viewMode: this.getWithDefault('viewMode', defaults.viewMode)
+      viewMode: this.getWithDefault('viewMode', defaults.viewMode),
+      widgetPositioning: this.getWithDefault('widgetPositioning', defaults.widgetPositioning)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
       let newDate = e.date && e.date.toDate() || null;
