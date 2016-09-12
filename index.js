@@ -24,7 +24,7 @@ module.exports = {
       trees.push(vendorTree);
     }
 
-    let datetimepickerJs = require.resolve('eonasdan-bootstrap-datetimepicker-npm');
+    let datetimepickerJs = require.resolve('eonasdan-bootstrap-datetimepicker');
     let datetimepickerPath = path.join(path.dirname(datetimepickerJs), '../../');
     trees.push(new Funnel(datetimepickerPath, {
       destDir: 'eonasdan-bootstrap-datetimepicker',
