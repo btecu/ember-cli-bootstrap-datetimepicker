@@ -90,7 +90,11 @@ export default Component.extend({
     this.removeObserver('maxDate');
     this.removeObserver('minDate');
 
-    this.$().data('DateTimePicker').destroy();
+    // Running the `ember` application embedded might cause the DOM to be cleaned before
+    let dateTimePicker = this.$().data('DateTimePicker');
+    if (dateTimePicker) {
+      dateTimePicker.destroy();
+    }
   },
 
   actions: {
