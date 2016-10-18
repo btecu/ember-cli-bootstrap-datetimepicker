@@ -268,7 +268,7 @@ Show calendar and time side by side.
 
 Default: `false`
 
-Accepts: `bolean`, 'year', 'month', 'day', 'hour', 'minute'
+Accepts: `boolean`, 'year', 'month', 'day', 'hour', 'minute'
 
 ```handlebars
 {{bs-datetimepicker date=myDate useCurrent='day'}}
