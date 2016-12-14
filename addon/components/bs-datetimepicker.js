@@ -19,6 +19,8 @@ export default Component.extend({
 
   openOnFocus: false,
 
+  isMobile: /Android|iPhone|iPod|Windows Phone/i.test(navigator.userAgent),
+
   iconClasses: computed('isTime', function() {
     if (this.get('isTime')) {
       return this.getWithDefault('config.icons.time', defaults.icons.time);
@@ -52,6 +54,7 @@ export default Component.extend({
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
       icons,
+      ignoreReadonly: this.isMobile || defaults.ignoreReadonly,
       locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),

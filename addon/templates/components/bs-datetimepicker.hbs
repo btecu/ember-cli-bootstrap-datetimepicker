@@ -1,4 +1,4 @@
-<input type="text" class="form-control" placeholder={{placeholder}} onfocus={{action 'focus'}}>
+<input type="text" class="form-control {{if isMobile 'bs-disable'}}" placeholder={{placeholder}} readonly={{isMobile}} onfocus={{action 'focus'}}>
 <span class="input-group-addon">
   <i class={{iconClasses}}></i>
 </span>
