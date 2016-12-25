@@ -13,7 +13,7 @@
   },
   "repository": "https://github.com/btecu/ember-cli-bootstrap-datetimepicker",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 6"
   },
   "author": "Bujorel Tecu",
   "license": "MIT",

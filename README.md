@@ -5,6 +5,7 @@ It uses [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetim
 
 
 ## Requirements
+* Node.js 6 or newer
 * Bootstrap 3
 * Ember >= 1.13.0
 * Ember CLI
