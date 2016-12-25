@@ -44,7 +44,7 @@ Fired when the date is changed.
 
 #### date
 
-Default: `false`
+Default: `null`
 
 Accepts: `date`, `moment`, `string`
 

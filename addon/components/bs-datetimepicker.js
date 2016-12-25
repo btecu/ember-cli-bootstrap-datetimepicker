@@ -45,7 +45,7 @@ export default Component.extend({
     };
 
     this.$().datetimepicker({
-      date: this.getWithDefault('date', defaults.defaultDate),
+      date: this.getWithDefault('date', null),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),
       disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
       disabledHours: this.getWithDefault('disabledHours', defaults.disabledHours),
