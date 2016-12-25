@@ -52,7 +52,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "eonasdan-bootstrap-datetimepicker-npm": "4.17.37",
+    "eonasdan-bootstrap-datetimepicker-npm": "4.17.42",
     "loader.js": "^4.0.1",
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.11"
