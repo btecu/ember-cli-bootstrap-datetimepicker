@@ -162,6 +162,24 @@ Accepts: `string`, `moment.local('locale')`
 
 Use the specified locale for text rendering.
 
+*Note:* When using localization, add `includeLocales` to `config/environment.js`.
+
+*Cherry pick locales (optimal)*
+
+```js
+moment: {
+  includeLocales: ['de', 'fr']
+}
+```
+
+*Include all locales*
+
+```js
+moment: {
+  includeLocales: true
+}
+```
+
 
 
 #### maxDate
