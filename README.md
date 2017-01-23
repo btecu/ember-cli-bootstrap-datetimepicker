@@ -164,7 +164,7 @@ Use the specified locale for text rendering.
 
 *Note:* When using localization, add `includeLocales` to `config/environment.js`.
 
-*Cherry pick locales (optimal)*
+**Cherry pick locales (optimal)**
 
 ```js
 moment: {
@@ -172,7 +172,7 @@ moment: {
 }
 ```
 
-*Include all locales*
+**Include all locales**
 
 ```js
 moment: {
