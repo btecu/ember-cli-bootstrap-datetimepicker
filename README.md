@@ -340,6 +340,17 @@ Accepts: `object` with one or all of the parameters above
 
 Will position widget according to the parameters given in object.
 
+#### showIcon
+
+Default: `true`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate showIcon=false}}
+```
+
+Show calendar or time icon after input.
 
 
 ## License
