@@ -16,10 +16,9 @@ export default Component.extend({
   tagName: 'div',
   classNames: ['input-group date'],
   placeholder: '',
-
   openOnFocus: false,
-
   isMobile: /Android|iPhone|iPod|Windows Phone/i.test(navigator.userAgent),
+  showIcon: true,
 
   iconClasses: computed('isTime', function() {
     if (this.get('isTime')) {
