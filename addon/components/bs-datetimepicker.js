@@ -16,10 +16,9 @@ export default Component.extend({
   tagName: 'div',
   classNames: ['input-group date'],
   placeholder: '',
-
   openOnFocus: false,
-
   isMobile: /Android|iPhone|iPod|Windows Phone/i.test(navigator.userAgent),
+  showIcon: true,
 
   iconClasses: computed('isTime', function() {
     if (this.get('isTime')) {
@@ -89,6 +88,14 @@ export default Component.extend({
     this.addObserver('locale', function() {
       this.$().data('DateTimePicker').locale(this.get('locale'));
     });
+
+    this.addObserver('format', function() {
+      this.$().data('DateTimePicker').format(this.get('format'));
+    });
+
+    this.addObserver('viewMode', function() {
+      this.$().data('DateTimePicker').viewMode(this.get('viewMode'));
+    });
   },
 
   willDestroyElement() {
@@ -97,6 +104,8 @@ export default Component.extend({
     this.removeObserver('maxDate');
     this.removeObserver('minDate');
     this.removeObserver('locale');
+    this.removeObserver('format');
+    this.removeObserver('viewMode');
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
     let dateTimePicker = this.$().data('DateTimePicker');
