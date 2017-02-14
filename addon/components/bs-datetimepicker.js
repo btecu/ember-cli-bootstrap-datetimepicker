@@ -97,6 +97,10 @@ export default Component.extend({
     this.addObserver('viewMode', function() {
       this.$().data('DateTimePicker').viewMode(this.get('viewMode'));
     });
+
+    this.addObserver('timeZone', function() {
+      this.$().data('DateTimePicker').timeZone(this.get('timeZone'));
+    });
   },
 
   willDestroyElement() {
@@ -107,6 +111,7 @@ export default Component.extend({
     this.removeObserver('locale');
     this.removeObserver('format');
     this.removeObserver('viewMode');
+    this.removeObserver('timeZone');
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
     let dateTimePicker = this.$().data('DateTimePicker');
