@@ -61,6 +61,7 @@ export default Component.extend({
       showClose: this.getWithDefault('showClose', defaults.showClose),
       showTodayButton: this.getWithDefault('showTodayButton', defaults.showTodayButton),
       sideBySide: this.getWithDefault('sideBySide', defaults.sideBySide),
+      timeZone: this.getWithDefault('timeZone', defaults.timeZone),
       useCurrent: this.getWithDefault('useCurrent', false),
       viewDate: this.getWithDefault('viewDate', defaults.viewDate),
       viewMode: this.getWithDefault('viewMode', defaults.viewMode),
