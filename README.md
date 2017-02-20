@@ -282,6 +282,18 @@ Accepts: `boolean`
 Show calendar and time side by side.
 
 
+#### timeZone
+
+Default: `''`
+
+Accepts: `string`
+
+```handlebars
+{{bs-datetimepicker date=myDate timeZone='Europe/Berlin'}}
+```
+
+Set timezone
+
 
 #### useCurrent
 
