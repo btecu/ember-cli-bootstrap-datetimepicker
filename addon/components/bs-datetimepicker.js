@@ -74,7 +74,7 @@ export default Component.extend({
     });
 
     this.addObserver('date', function() {
-      this.$().data('DateTimePicker').date(this.get('date'));
+      this.$().data('DateTimePicker').date(this.getWithDefault('date', null));
     });
 
     this.addObserver('maxDate', function() {
