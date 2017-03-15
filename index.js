@@ -12,9 +12,9 @@ module.exports = {
     this._super.included(app);
 
     // Import unminified css and js
-    let basePath = `${this.treePaths.vendor}/eonasdan-bootstrap-datetimepicker`;
-    app.import(`${basePath}/build/css/bootstrap-datetimepicker.css`);
-    app.import(`${basePath}/src/js/bootstrap-datetimepicker.js`);
+    let basePath = this.treePaths.vendor + '/eonasdan-bootstrap-datetimepicker';
+    app.import(basePath + '/build/css/bootstrap-datetimepicker.css');
+    app.import(basePath + '/src/js/bootstrap-datetimepicker.js');
   },
 
   treeForVendor: function(vendorTree) {
