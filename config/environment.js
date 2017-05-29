@@ -3,7 +3,7 @@
 
 module.exports = function(environment, appSettings) {
   let moment = appSettings.moment || {};
-  let { includeLocales = false } = moment;
+  let includeLocales = moment.includeLocales || false;
 
   return {
     moment: {
