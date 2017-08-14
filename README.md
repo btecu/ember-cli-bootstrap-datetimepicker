@@ -150,6 +150,15 @@ If inner html has to be set (Material Icons), use `::after` pseudo selector.
 
 
 
+#### inline
+
+Defaults: `component defaults`
+
+```handlebars
+{{bs-datetimepicker inline=true}}
+```
+
+
 #### locale
 
 Default: `moment.locale()`

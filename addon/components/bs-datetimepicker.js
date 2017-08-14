@@ -54,6 +54,7 @@ export default Component.extend({
       format: this.getWithDefault('format', defaults.format),
       icons,
       ignoreReadonly: this.isMobile || defaults.ignoreReadonly,
+      inline: this.getWithDefault('inline', defaults.locale),
       locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),
