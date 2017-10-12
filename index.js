@@ -4,12 +4,12 @@
 module.exports = {
   name: 'ember-cli-bootstrap-datetimepicker',
 
-  included() {
-    this._super.included(...arguments);
+  included: function(app) {
+    this._super.included(app);
 
     // Import unminified css and js
     let basePath = 'node_modules/eonasdan-bootstrap-datetimepicker';
-    this.import(`${basePath}/build/css/bootstrap-datetimepicker.css`);
-    this.import(`${basePath}/src/js/bootstrap-datetimepicker.js`);
+    app.import(`${basePath}/build/css/bootstrap-datetimepicker.css`);
+    app.import(`${basePath}/src/js/bootstrap-datetimepicker.js`);
   }
 };
