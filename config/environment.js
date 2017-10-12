@@ -1,8 +1,8 @@
 /* eslint-env node */
 'use strict';
 
-module.exports = function(environment, appSettings) {
-  let moment = appSettings.moment || {};
+module.exports = function(environment, appConfig) {
+  let moment = appConfig.moment || {};
   let includeLocales = moment.includeLocales || false;
 
   return {
