@@ -79,5 +79,6 @@ module.exports = {
         devDependencies: {}
       }
     }
-  ]
+  ],
+  useYarn: true
 };
