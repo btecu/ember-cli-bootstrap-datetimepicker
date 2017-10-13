@@ -31,7 +31,7 @@
   "dependencies": {
     "ember-cli-babel": "^6.8.2",
     "ember-cli-htmlbars": "^2.0.1",
-    "eonasdan-bootstrap-datetimepicker": "4.17.47"
+    "eonasdan-bootstrap-datetimepicker": "btecu/bootstrap-datetimepicker"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
