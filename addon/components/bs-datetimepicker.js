@@ -2,12 +2,14 @@ import $ from 'jquery';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import layout from '../templates/components/bs-datetimepicker';
+import DynamicAttributeBindings from '../-private/dynamic-attribute-bindings';
 
 const {
   defaults
 } = $.fn.datetimepicker;
 
-export default Component.extend({
+export default Component.extend(DynamicAttributeBindings, {
+  attributeBindings: null,
   layout,
   tagName: 'div',
   classNames: ['input-group date'],
