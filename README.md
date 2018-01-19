@@ -43,6 +43,20 @@ Fired when the date is changed.
 
 ### Available options
 
+#### calendarWeeks
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate calendarWeeks=true}}
+```
+
+Shows the week of the year to the left of first day of the week.
+
+
+
 #### date
 
 Default: `null`

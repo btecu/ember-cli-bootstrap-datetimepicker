@@ -42,6 +42,7 @@ export default Component.extend(DynamicAttributeBindings, {
     };
 
     this.$().datetimepicker({
+      calendarWeeks: this.getWithDefault('calendarWeeks', defaults.calendarWeeks),
       date: this.getWithDefault('date', null),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),
       disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
