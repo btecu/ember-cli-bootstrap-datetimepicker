@@ -315,7 +315,7 @@ Accepts: `string`
 {{bs-datetimepicker date=myDate timeZone='Europe/Berlin'}}
 ```
 
-Set timezone
+Set timezone.
 
 
 #### useCurrent
@@ -358,9 +358,19 @@ Accepts: 'years', 'months', 'days'
 ```
 
 The default view to display when the picker is shown.
-*Note:* To limit the picker to selecting, for instance the year and month, use format: `MM/YYYY`
+*Note:* To limit the picker to selecting, for instance the year and month, use format: `MM/YYYY`.
 
+#### widgetParent
 
+Default: `null`
+
+Accepts: string or jQuery object
+
+```handlebars
+{{bs-datetimepicker date=myDate widgetParent='#an-element-id'}}
+```
+
+On picker show, places the widget at the identifier (string) or jQuery object if the element has css position: 'relative'.
 
 #### widgetPositioning
 
