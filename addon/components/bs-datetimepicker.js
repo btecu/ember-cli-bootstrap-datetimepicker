@@ -42,6 +42,7 @@ export default Component.extend(DynamicAttributeBindings, {
     };
 
     this.$().datetimepicker({
+      allowInputToggle: this.getWithDefault('allowInputToggle', defaults.allowInputToggle),
       calendarWeeks: this.getWithDefault('calendarWeeks', defaults.calendarWeeks),
       date: this.getWithDefault('date', null),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),

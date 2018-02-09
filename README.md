@@ -43,6 +43,18 @@ Fired when the date is changed.
 
 ### Available options
 
+#### allowInputToggle
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate allowInputToggle=true}}
+```
+
+If `true`, the picker will show on textbox focus and icon click when used in a button group.
+
 #### calendarWeeks
 
 Default: `false`
