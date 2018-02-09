@@ -65,8 +65,8 @@ export default Component.extend(DynamicAttributeBindings, {
       useCurrent: this.getWithDefault('useCurrent', false),
       viewDate: this.getWithDefault('viewDate', defaults.viewDate),
       viewMode: this.getWithDefault('viewMode', defaults.viewMode),
-      widgetPositioning: this.getWithDefault('widgetPositioning', defaults.widgetPositioning),
-      widgetParent: this.getWithDefault('widgetParent', defaults.widgetParent)
+      widgetParent: this.getWithDefault('widgetParent', defaults.widgetParent),
+      widgetPositioning: this.getWithDefault('widgetPositioning', defaults.widgetPositioning)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
       let newDate = e.date && e.date.toDate() || null;
