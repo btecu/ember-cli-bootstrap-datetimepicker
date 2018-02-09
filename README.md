@@ -362,7 +362,7 @@ The default view to display when the picker is shown.
 
 #### widgetParent
 
-Default: null
+Default: `null`
 
 Accepts: string or jQuery object
 
