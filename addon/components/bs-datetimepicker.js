@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/bs-datetimepicker';
-
-const {
-  $,
-  Component,
-  computed
-} = Ember;
 
 const {
   defaults
@@ -54,6 +50,7 @@ export default Component.extend({
       format: this.getWithDefault('format', defaults.format),
       icons,
       ignoreReadonly: this.isMobile || defaults.ignoreReadonly,
+      inline: this.getWithDefault('inline', defaults.inline),
       locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),

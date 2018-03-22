@@ -5,7 +5,7 @@ It uses [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetim
 
 
 ## Requirements
-* Node.js 6 or newer
+* Node.js 4 or newer
 * Bootstrap 3
 * Ember >= 2
 * Ember CLI
@@ -148,6 +148,15 @@ If inner html has to be set (Material Icons), use `::after` pseudo selector.
 
 *Note:* When using only the time picker, pass `isTime=true` so that the correct icon is displayed.
 
+
+
+#### inline
+
+Defaults: `component defaults`
+
+```handlebars
+{{bs-datetimepicker inline=true}}
+```
 
 
 #### locale
