@@ -2,12 +2,14 @@ import $ from 'jquery';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import layout from '../templates/components/bs-datetimepicker';
+import DynamicAttributeBindings from '../-private/dynamic-attribute-bindings';
 
 const {
   defaults
 } = $.fn.datetimepicker;
 
-export default Component.extend({
+export default Component.extend(DynamicAttributeBindings, {
+  attributeBindings: null,
   layout,
   tagName: 'div',
   classNames: ['input-group date'],
@@ -40,6 +42,8 @@ export default Component.extend({
     };
 
     this.$().datetimepicker({
+      allowInputToggle: this.getWithDefault('allowInputToggle', defaults.allowInputToggle),
+      calendarWeeks: this.getWithDefault('calendarWeeks', defaults.calendarWeeks),
       date: this.getWithDefault('date', null),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),
       disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
@@ -62,6 +66,7 @@ export default Component.extend({
       useCurrent: this.getWithDefault('useCurrent', false),
       viewDate: this.getWithDefault('viewDate', defaults.viewDate),
       viewMode: this.getWithDefault('viewMode', defaults.viewMode),
+      widgetParent: this.getWithDefault('widgetParent', defaults.widgetParent),
       widgetPositioning: this.getWithDefault('widgetPositioning', defaults.widgetPositioning)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null

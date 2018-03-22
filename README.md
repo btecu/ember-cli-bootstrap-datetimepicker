@@ -43,6 +43,32 @@ Fired when the date is changed.
 
 ### Available options
 
+#### allowInputToggle
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate allowInputToggle=true}}
+```
+
+If `true`, the picker will show on textbox focus and icon click when used in a button group.
+
+#### calendarWeeks
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate calendarWeeks=true}}
+```
+
+Shows the week of the year to the left of first day of the week.
+
+
+
 #### date
 
 Default: `null`
@@ -301,7 +327,7 @@ Accepts: `string`
 {{bs-datetimepicker date=myDate timeZone='Europe/Berlin'}}
 ```
 
-Set timezone
+Set timezone.
 
 
 #### useCurrent
@@ -344,9 +370,19 @@ Accepts: 'years', 'months', 'days'
 ```
 
 The default view to display when the picker is shown.
-*Note:* To limit the picker to selecting, for instance the year and month, use format: `MM/YYYY`
+*Note:* To limit the picker to selecting, for instance the year and month, use format: `MM/YYYY`.
 
+#### widgetParent
 
+Default: `null`
+
+Accepts: string or jQuery object
+
+```handlebars
+{{bs-datetimepicker date=myDate widgetParent='#an-element-id'}}
+```
+
+On picker show, places the widget at the identifier (string) or jQuery object if the element has css position: 'relative'.
 
 #### widgetPositioning
 
