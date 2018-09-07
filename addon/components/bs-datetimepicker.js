@@ -73,7 +73,9 @@ export default Component.extend(DynamicAttributeBindings, {
       let newDate = e.date && e.date.toDate() || null;
 
       this.set('date', newDate);
-      this.sendAction('change', newDate);
+      if (this.change) {
+        this.change(newDate);
+      }
     });
 
     this.addObserver('date', function() {
