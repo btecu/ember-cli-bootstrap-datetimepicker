@@ -1,4 +1,5 @@
 {{#unless inline}}
+  {{yield}}
   <input type="text" class="form-control {{if isMobile 'bs-disable'}}" placeholder={{placeholder}} readonly={{isMobile}} onfocus={{action 'focus'}}>
   {{#if showIcon}}
     <span class="input-group-addon">
