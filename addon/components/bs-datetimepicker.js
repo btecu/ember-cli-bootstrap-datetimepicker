@@ -106,7 +106,7 @@ export default Component.extend(DynamicAttributeBindings, {
       this.$().data('DateTimePicker').timeZone(this.get('timeZone'));
     });
     this.addObserver('disabledDates', function() {
-      this.$().data('DateTimePicker').timeZone(this.get('disabledDates'));
+      this.$().data('DateTimePicker').disabledDates(this.get('disabledDates'));
     });
   },
 
