@@ -126,6 +126,21 @@ Disables / enables selection of hours in the array, affecting all days.
 
 
 
+#### extraFormats
+
+Default: `false`
+
+Accepts: `array` of [`string`]
+
+```handlebars
+{{bs-datetimepicker date=myDate extraFormats=extraFormats}}
+```
+
+Allows for several input formats to be valid. Accepts an array of valid input
+moment format options.
+
+
+
 #### focusOnShow
 
 Default: `true`

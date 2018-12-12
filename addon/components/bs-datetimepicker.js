@@ -52,6 +52,7 @@ export default Component.extend(DynamicAttributeBindings, {
       enabledHours: this.getWithDefault('enabledHours', defaults.enabledHours),
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
+      extraFormats: this.getWithDefault('extraFormats', defaults.extraFormats),
       icons,
       ignoreReadonly: this.isMobile || defaults.ignoreReadonly,
       inline: this.getWithDefault('inline', defaults.inline),
