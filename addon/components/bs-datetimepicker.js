@@ -105,6 +105,9 @@ export default Component.extend(DynamicAttributeBindings, {
     this.addObserver('timeZone', function() {
       this.$().data('DateTimePicker').timeZone(this.get('timeZone'));
     });
+    this.addObserver('disabledDates', function() {
+      this.$().data('DateTimePicker').disabledDates(this.get('disabledDates'));
+    });
   },
 
   willDestroyElement() {
