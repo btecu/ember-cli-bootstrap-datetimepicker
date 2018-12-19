@@ -36,6 +36,7 @@
     "eonasdan-bootstrap-datetimepicker": "btecu/bootstrap-datetimepicker"
   },
   "devDependencies": {
+    "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.4",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.4.2",
