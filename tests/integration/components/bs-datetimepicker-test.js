@@ -1,30 +1,25 @@
-import { moduleForComponent, test, todo } from 'ember-qunit';
+import { module, test, todo } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('bs-datetimepicker', 'Integration | Component | bs datetimepicker', {
-  integration: true
-});
+module('Integration | Component | bs datetimepicker', function(hooks) {
+  setupRenderingTest(hooks);
 
-todo('it renders iconClasses and iconText', function(assert) {
-  assert.expect(2);
+  todo('it renders iconClasses and iconText', async function(assert) {
+    assert.expect(2);
 
-  this.render(
-    hbs`{{bs-datetimepicker date='2016-01-01' iconClasses='material-icons' iconText='date-range'}}`
-  );
+    await render(hbs`{{bs-datetimepicker date='2016-01-01' iconClasses='material-icons' iconText='date-range'}}`);
 
-  assert.equal(this.$('.input-group-addon i').attr('class'), 'material-icons');
-  assert.equal(
-    this.$('.input-group-addon i')
-      .text()
-      .trim(),
-    'date-range'
-  );
-});
+    assert.dom('.input-group-addon i').hasAttribute('class', 'material-icons');
+    assert.dom('.input-group-addon i').hasText('date-range');
+  });
 
-test('it renders with default icon classes', function(assert) {
-  assert.expect(1);
+  test('it renders with default icon classes', async function(assert) {
+    assert.expect(1);
 
-  this.render(hbs`{{bs-datetimepicker date='2016-01-01'}}`);
+    await render(hbs`{{bs-datetimepicker date='2016-01-01'}}`);
 
-  assert.equal(this.$('.input-group-addon i').attr('class'), 'glyphicon glyphicon-calendar');
+    assert.dom('.input-group-addon i').hasAttribute('class', 'glyphicon glyphicon-calendar');
+  });
 });
