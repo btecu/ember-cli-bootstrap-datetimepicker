@@ -61,7 +61,7 @@
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^8.0.1",
     "loader.js": "^4.7.0",
-    "moment": "^2.24.2",
+    "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "qunit-dom": "^0.8.4"
   },
