@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(environment, appConfig) {
+module.exports = function(_, appConfig) {
   let moment = appConfig.moment || {};
   let includeLocales = moment.includeLocales || false;
 

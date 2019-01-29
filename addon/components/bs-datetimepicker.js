@@ -79,50 +79,30 @@ export default Component.extend(DynamicAttributeBindings, {
       }
     });
 
-    this.addObserver('date', function() {
-      this.$().data('DateTimePicker').date(this.getWithDefault('date', null));
-    });
-
-    this.addObserver('maxDate', function() {
-      this.$().data('DateTimePicker').maxDate(this.get('maxDate'));
-    });
-
-    this.addObserver('minDate', function() {
-      this.$().data('DateTimePicker').minDate(this.get('minDate'));
-    });
-
-    this.addObserver('locale', function() {
-      this.$().data('DateTimePicker').locale(this.get('locale'));
-    });
-
-    this.addObserver('format', function() {
-      this.$().data('DateTimePicker').format(this.get('format'));
-    });
-
-    this.addObserver('viewMode', function() {
-      this.$().data('DateTimePicker').viewMode(this.get('viewMode'));
-    });
-
-    this.addObserver('timeZone', function() {
-      this.$().data('DateTimePicker').timeZone(this.get('timeZone'));
-    });
-    this.addObserver('disabledDates', function() {
-      this.$().data('DateTimePicker').disabledDates(this.get('disabledDates'));
-    });
+    this.addObserver(this, 'date', this.updateDate);
+    this.addObserver(this, 'disabledDates', this.updateDisabledDates);
+    this.addObserver(this, 'format', this.updateFormat);
+    this.addObserver(this, 'locale', this.updateLocale);
+    this.addObserver(this, 'maxDate', this.updateMaxDate);
+    this.addObserver(this, 'minDate', this.updateMinDate);
+    this.addObserver(this, 'timeZone', this.updateTimeZone);
+    this.addObserver(this, 'viewMode', this.updateViewMode);
   },
 
   willDestroyElement() {
     this._super(...arguments);
-    this.removeObserver('date');
-    this.removeObserver('maxDate');
-    this.removeObserver('minDate');
-    this.removeObserver('locale');
-    this.removeObserver('format');
-    this.removeObserver('viewMode');
-    this.removeObserver('timeZone');
+
+    this.removeObserver(this, 'date', this.updateDate);
+    this.removeObserver(this, 'disabledDates', this.updateDisabledDates);
+    this.removeObserver(this, 'format', this.updateFormat);
+    this.removeObserver(this, 'locale', this.updateLocale);
+    this.removeObserver(this, 'maxDate', this.updateMaxDate);
+    this.removeObserver(this, 'minDate', this.updateMinDate);
+    this.removeObserver(this, 'timeZone', this.updateTimeZone);
+    this.removeObserver(this, 'viewMode', this.updateViewMode);
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
-    let dateTimePicker = this.$().data('DateTimePicker');
+    let dateTimePicker = this.picker();
     if (dateTimePicker) {
       dateTimePicker.destroy();
     }
@@ -131,8 +111,40 @@ export default Component.extend(DynamicAttributeBindings, {
   actions: {
     focus() {
       if (this.get('openOnFocus')) {
-        this.$().data('DateTimePicker').show();
+        this.picker().show();
       }
     }
+  },
+
+  picker() {
+    return this.$().data('DateTimePicker');
+  },
+
+  updateDate() {
+    this.picker().date(this.getWithDefault('date', null));
+  },
+
+  updateFormat() {
+    this.picker().format(this.get('format'));
+  },
+
+  updateLocale() {
+    this.picker().locale(this.get('locale'));
+  },
+
+  updateMaxDate() {
+    this.picker().maxDate(this.get('maxDate'));
+  },
+
+  updateMinDate() {
+    this.picker().minDate(this.get('minDate'));
+  },
+
+  updateTimeZone() {
+    this.picker().timeZone(this.get('timeZone'));
+  },
+
+  updateViewMode() {
+    this.picker().viewMode(this.get('viewMode'));
   }
 });
