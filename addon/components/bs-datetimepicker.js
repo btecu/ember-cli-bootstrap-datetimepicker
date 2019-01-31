@@ -79,27 +79,27 @@ export default Component.extend(DynamicAttributeBindings, {
       }
     });
 
-    this.addObserver(this, 'date', this.updateDate);
-    this.addObserver(this, 'disabledDates', this.updateDisabledDates);
-    this.addObserver(this, 'format', this.updateFormat);
-    this.addObserver(this, 'locale', this.updateLocale);
-    this.addObserver(this, 'maxDate', this.updateMaxDate);
-    this.addObserver(this, 'minDate', this.updateMinDate);
-    this.addObserver(this, 'timeZone', this.updateTimeZone);
-    this.addObserver(this, 'viewMode', this.updateViewMode);
+    this.addObserver('date', this, 'updateDate');
+    this.addObserver('disabledDates', this, 'updateDisabledDates');
+    this.addObserver('format', this, 'updateFormat');
+    this.addObserver('locale', this, 'updateLocale');
+    this.addObserver('maxDate', this, 'updateMaxDate');
+    this.addObserver('minDate', this, 'updateMinDate');
+    this.addObserver('timeZone', this, 'updateTimeZone');
+    this.addObserver('viewMode', this, 'updateViewMode');
   },
 
   willDestroyElement() {
     this._super(...arguments);
 
-    this.removeObserver(this, 'date', this.updateDate);
-    this.removeObserver(this, 'disabledDates', this.updateDisabledDates);
-    this.removeObserver(this, 'format', this.updateFormat);
-    this.removeObserver(this, 'locale', this.updateLocale);
-    this.removeObserver(this, 'maxDate', this.updateMaxDate);
-    this.removeObserver(this, 'minDate', this.updateMinDate);
-    this.removeObserver(this, 'timeZone', this.updateTimeZone);
-    this.removeObserver(this, 'viewMode', this.updateViewMode);
+    this.removeObserver('date', this, 'updateDate');
+    this.removeObserver('disabledDates', this, 'updateDisabledDates');
+    this.removeObserver('format', this, 'updateFormat');
+    this.removeObserver('locale', this, 'updateLocale');
+    this.removeObserver('maxDate', this, 'updateMaxDate');
+    this.removeObserver('minDate', this, 'updateMinDate');
+    this.removeObserver('timeZone', this, 'updateTimeZone');
+    this.removeObserver('viewMode', this, 'updateViewMode');
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
     let dateTimePicker = this.picker();
