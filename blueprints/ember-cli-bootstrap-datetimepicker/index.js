@@ -2,8 +2,6 @@
 'use strict';
 
 module.exports = {
-  description: '',
-
   normalizeEntityName() {},
 
   afterInstall() {
