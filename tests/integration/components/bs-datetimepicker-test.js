@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, focus } from '@ember/test-helpers';
@@ -41,7 +42,7 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
     });
     await render(hbs`{{bs-datetimepicker date="1970-01-01" change=callback}}`);
     // Set a new Date to trigger the dp.change event
-    this.$('.input-group.date')
+    $('.input-group.date', this.element)
       .data('DateTimePicker')
       .date(new Date('2016-01-01'));
   });
