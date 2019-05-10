@@ -41,7 +41,7 @@ export default Component.extend(DynamicAttributeBindings, {
       up: this.getWithDefault('config.icons.up', defaults.icons.up)
     };
 
-    this.$().datetimepicker({
+    $(this.element).datetimepicker({
       allowInputToggle: this.getWithDefault('allowInputToggle', defaults.allowInputToggle),
       calendarWeeks: this.getWithDefault('calendarWeeks', defaults.calendarWeeks),
       date: this.getWithDefault('date', null),
@@ -117,7 +117,7 @@ export default Component.extend(DynamicAttributeBindings, {
   },
 
   picker() {
-    return this.$().data('DateTimePicker');
+    return $(this.element).data('DateTimePicker');
   },
 
   updateDate() {
