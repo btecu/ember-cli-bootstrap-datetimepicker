@@ -2,6 +2,7 @@
   <input
     type="text"
     class="form-control {{if isMobile "bs-disable"}}"
+    disabled={{disabled}}
     placeholder={{placeholder}}
     readonly={{isMobile}}
     onfocus={{action "focus"}}

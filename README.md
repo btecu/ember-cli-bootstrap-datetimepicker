@@ -96,6 +96,20 @@ Disables selection of days in the array, e.g. sundays.
 
 
 
+### disabled
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker disabled=disabled}}
+```
+
+Disables the input element.
+
+
+
 #### disabledDates / enabledDates
 
 Default: `false`
