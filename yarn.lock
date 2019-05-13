@@ -2288,10 +2288,10 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
-btecu-eonasdan-bootstrap-datetimepicker@4.17.48:
-  version "4.17.48"
-  resolved "https://registry.yarnpkg.com/btecu-eonasdan-bootstrap-datetimepicker/-/btecu-eonasdan-bootstrap-datetimepicker-4.17.48.tgz#d29bea526829283950f00a6978cfb15727831f8c"
-  integrity sha512-zfnjgKvhQLRc/L2nFrbpYCmJI7DtEjL/E31bPEXQyilZkWOi7TplECfo7L/vK34AC0sD1nqEYi1UU7zoTDcvjw==
+btecu-eonasdan-bootstrap-datetimepicker@4.17.50:
+  version "4.17.50"
+  resolved "https://registry.yarnpkg.com/btecu-eonasdan-bootstrap-datetimepicker/-/btecu-eonasdan-bootstrap-datetimepicker-4.17.50.tgz#11e2e9da200638d2634857303d5f1653abe794e3"
+  integrity sha512-/5Cp+sAYCRpxs6ExmYH5DkGOfvZ7uSDWRazQ8DzIezUE5YTNdg98rpQdYhh2lpnS9SuBYs9xpGXwAAw3GZj/kw==
 
 buffer-alloc-unsafe@^1.1.0:
   version "1.1.0"
