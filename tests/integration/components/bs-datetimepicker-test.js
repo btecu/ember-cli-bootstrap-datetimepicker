@@ -54,4 +54,22 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
     await focus('input');
     assert.dom('.bootstrap-datetimepicker-widget').exists('picker should be shown');
   });
+
+  test('disabled dates are disabled', async function(assert) {
+    assert.expect(4);
+
+    this.set('disabledDates',['2016-01-02','2016-01-03']);
+    await render(hbs`{{bs-datetimepicker date='2016-01-01' disabledDates=disabledDates openOnFocus=true}}`);
+    assert.dom('input').hasValue('01/01/2016 12:00 AM');
+
+    await focus('input');
+    assert.dom("td[data-day='01/02/2016']").hasClass('disabled', 'disabled class missing');
+    assert.dom("td[data-day='01/03/2016']").hasClass('disabled', 'disabled class missing');
+
+    //updateDisabledDates
+    await blur('input');
+    this.set('disabledDates',['2016-01-02','2016-01-03','2016-01-04']);
+    await focus('input');
+    assert.dom("td[data-day='01/04/2016']").hasClass('disabled', 'disabled class missing');
+  });
 });
