@@ -124,6 +124,10 @@ export default Component.extend(DynamicAttributeBindings, {
     this.picker().date(this.getWithDefault('date', null));
   },
 
+  updateDisabledDates() {
+    this.picker().disabledDates(this.get('disabledDates'));
+  },
+
   updateFormat() {
     this.picker().format(this.get('format'));
   },
