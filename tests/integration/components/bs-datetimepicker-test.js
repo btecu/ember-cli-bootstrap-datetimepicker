@@ -63,13 +63,19 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
     assert.dom('input').hasValue('01/01/2016 12:00 AM');
 
     await focus('input');
-    assert.dom("td[data-day='01/02/2016']").hasClass('disabled', 'disabled class missing');
-    assert.dom("td[data-day='01/03/2016']").hasClass('disabled', 'disabled class missing');
+    assert.dom("td[data-day='01/02/2016']").hasClass('disabled', 'has disabled class');
+    assert.dom("td[data-day='01/03/2016']").hasClass('disabled', 'has disabled class');
 
     //updateDisabledDates
     await blur('input');
-    this.set('disabledDates',['2016-01-02','2016-01-03','2016-01-04']);
+    //datetimepicker only updates if disabledDates array is already Date objects
+    let date = new Date();
+    this.set('disabledDates',[
+      new Date(1451692800000 + (date.getTimezoneOffset() * 60000)),
+      new Date(1451779200000 + (date.getTimezoneOffset() * 60000)),
+      new Date(1451865600000 + (date.getTimezoneOffset() * 60000)),
+    ]);
     await focus('input');
-    assert.dom("td[data-day='01/04/2016']").hasClass('disabled', 'disabled class missing');
+    assert.dom("td[data-day='01/04/2016']").hasClass('disabled', 'has disabled class');
   });
 });
