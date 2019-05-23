@@ -69,11 +69,10 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
     //updateDisabledDates
     await blur('input');
     //datetimepicker only updates if disabledDates array is already Date objects
-    let date = new Date();
     this.set('disabledDates',[
-      new Date(1451692800000 + (date.getTimezoneOffset() * 60000)),
-      new Date(1451779200000 + (date.getTimezoneOffset() * 60000)),
-      new Date(1451865600000 + (date.getTimezoneOffset() * 60000)),
+      new Date('1/2/2016'),
+      new Date('1/3/2016'),
+      new Date('1/4/2016'),
     ]);
     await focus('input');
     assert.dom("td[data-day='01/04/2016']").hasClass('disabled', 'has disabled class');
