@@ -123,6 +123,8 @@ Accepts: `array` of [`date`, `moment`, `string`]
 
 Disables / enables selection of dates in the array, e.g. holidays.
 
+When updating the value, the array should be of type `date`.
+
 
 
 #### disabledHours / enabledHours

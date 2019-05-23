@@ -10,14 +10,14 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
   test('it renders basic input', async function(assert) {
     assert.expect(1);
 
-    await render(hbs`{{bs-datetimepicker date='2016-01-01'}}`);
+    await render(hbs`{{bs-datetimepicker date="2016-01-01"}}`);
     assert.dom('input').hasValue('01/01/2016 12:00 AM');
   });
 
   test('it renders with default icon classes', async function(assert) {
     assert.expect(1);
 
-    await render(hbs`{{bs-datetimepicker date='2016-01-01'}}`);
+    await render(hbs`{{bs-datetimepicker date="2016-01-01"}}`);
     assert.dom('.input-group-addon i').hasAttribute('class', 'glyphicon glyphicon-calendar');
   });
 
@@ -26,7 +26,7 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
 
     this.set('isTime', false);
 
-    await render(hbs`{{bs-datetimepicker date='2016-01-01' isTime=isTime}}`);
+    await render(hbs`{{bs-datetimepicker date="2016-01-01" isTime=isTime}}`);
     assert.dom('.input-group-addon i').hasAttribute('class', 'glyphicon glyphicon-calendar');
     this.set('isTime', true);
     assert.dom('.input-group-addon i').hasAttribute('class', 'glyphicon glyphicon-time');
@@ -35,12 +35,14 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
   test('changing the value will trigger change action', async function(assert) {
     assert.expect(1);
 
-    const done = assert.async();
+    let done = assert.async();
     this.set('callback', date => {
       assert.equal(date.toISOString(), '2016-01-01T00:00:00.000Z');
       done();
     });
+
     await render(hbs`{{bs-datetimepicker date="1970-01-01" change=callback}}`);
+
     // Set a new Date to trigger the dp.change event
     $('.input-group.date', this.element)
       .data('DateTimePicker')
@@ -58,22 +60,22 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
   test('disabled dates are disabled', async function(assert) {
     assert.expect(4);
 
-    this.set('disabledDates',['2016-01-02','2016-01-03']);
-    await render(hbs`{{bs-datetimepicker date='2016-01-01' disabledDates=disabledDates openOnFocus=true}}`);
+    this.set('disabledDates', ['2016-01-02', '2016-01-03']);
+    await render(hbs`{{bs-datetimepicker date="2016-01-01" disabledDates=disabledDates openOnFocus=true}}`);
     assert.dom('input').hasValue('01/01/2016 12:00 AM');
 
     await focus('input');
     assert.dom("td[data-day='01/02/2016']").hasClass('disabled', 'has disabled class');
     assert.dom("td[data-day='01/03/2016']").hasClass('disabled', 'has disabled class');
-
-    //updateDisabledDates
     await blur('input');
-    //datetimepicker only updates if disabledDates array is already Date objects
-    this.set('disabledDates',[
+
+    // Datetimepicker requires disabledDates array to be of type `date`
+    this.set('disabledDates', [
       new Date('1/2/2016'),
       new Date('1/3/2016'),
       new Date('1/4/2016'),
     ]);
+
     await focus('input');
     assert.dom("td[data-day='01/04/2016']").hasClass('disabled', 'has disabled class');
   });
