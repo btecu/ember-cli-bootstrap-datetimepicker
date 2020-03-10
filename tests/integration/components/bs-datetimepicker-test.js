@@ -79,4 +79,72 @@ module('Integration | Component | bs datetimepicker', function(hooks) {
     await focus('input');
     assert.dom("td[data-day='01/04/2016']").hasClass('disabled', 'has disabled class');
   });
+
+  test('it passes through localized tooltips', async function(assert) {
+    const tooltips = {
+      clear: 'Localized Clear',
+      close: 'Localized Close the picker',
+      selectMonth: 'Localized Select Month',
+      prevMonth: 'Localized Previous Month',
+      nextMonth: 'Localized Next Month',
+      selectYear: 'Localized Select Year',
+      prevYear: 'Localized Previous Year',
+      nextYear: 'Localized Next Year',
+      selectDecade: 'Localized Select Decade',
+      prevDecade: 'Localized Previous Decade',
+      nextDecade: 'Localized Next Decade',
+      prevCentury: 'Localized Previous Century',
+      nextCentury: 'Localized Next Century',
+      pickHour: 'Localized Pick Hour',
+      incrementHour: 'Localized Increment Hour',
+      decrementHour: 'Localized Decrement Hour',
+      pickMinute: 'Localized Pick Minute',
+      incrementMinute: 'Localized Increment Minute',
+      decrementMinute: 'Localized Decrement Minute',
+      pickSecond: 'Localized Pick Second',
+      incrementSecond: 'Localized Increment Second',
+      decrementSecond: 'Localized Decrement Second',
+      togglePeriod: 'Localized Toggle Period',
+      selectTime: 'Localized Select Time'
+    };
+
+    this.set('tooltips', tooltips);
+
+    await render(hbs`{{bs-datetimepicker locale='es' openOnFocus='true' tooltips=tooltips}}`);
+    await focus('input');
+
+    const $prevButtons = $('.datepicker .prev > span');
+    const $nextButtons = $('.datepicker .next > span');
+    const $datePicker = $('.datepicker .picker-switch');
+    const $selectTime = $('.picker-switch a');
+    const $modifyTime = $('.timepicker-picker a');
+    const $timepickerHour= $('span.timepicker-hour');
+    const $timepickerMinute = $('span.timepicker-minute');
+    const $togglePeriod = $('.timepicker-picker button');
+
+    assert.equal(tooltips.selectTime, $selectTime.attr('title'), 'The select time tooltip is set');
+
+    assert.equal(tooltips.incrementHour, $modifyTime[0].title, 'Increment hour is set');
+    assert.equal(tooltips.incrementMinute, $modifyTime[1].title, 'Increment minute is set');
+    assert.equal(tooltips.decrementHour, $modifyTime[2].title, 'Decrement hour is set');
+    assert.equal(tooltips.decrementMinute, $modifyTime[3].title, 'Decrement minute is set');
+
+    assert.equal(tooltips.togglePeriod, $togglePeriod.attr('title'), 'The toggle period tooltip is set');
+    assert.equal(tooltips.pickHour, $timepickerHour.attr('title'), 'The hour picket tooltip is set');
+    assert.equal(tooltips.pickMinute, $timepickerMinute.attr('title'), 'The minute picket tooltip is set');
+
+    assert.equal(tooltips.prevMonth, $prevButtons[0].title, 'The previous month tooltip was set');
+    assert.equal(tooltips.prevYear, $prevButtons[1].title, 'The previous year tooltip was set');
+    assert.equal(tooltips.prevDecade, $prevButtons[2].title, 'The previous decade tooltip was set');
+    assert.equal(tooltips.prevCentury, $prevButtons[3].title, 'The revious century tooltip was set');
+
+    assert.equal(tooltips.nextMonth, $nextButtons[0].title, 'The next month tooltip was set');
+    assert.equal(tooltips.nextYear, $nextButtons[1].title, 'The next year tooltip was set');
+    assert.equal(tooltips.nextDecade, $nextButtons[2].title, 'The next decade tooltip was set');
+    assert.equal(tooltips.nextCentury, $nextButtons[3].title, 'The next century tooltip was set');
+
+    assert.equal(tooltips.selectMonth, $datePicker[0].title, 'The previous month tooltip was set');
+    assert.equal(tooltips.selectYear, $datePicker[1].title, 'The previous year tooltip was set');
+    assert.equal(tooltips.selectDecade, $datePicker[2].title, 'The previous decade tooltip was set');
+  })
 });
