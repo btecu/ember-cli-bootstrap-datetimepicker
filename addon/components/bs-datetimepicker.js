@@ -76,6 +76,14 @@ export default Component.extend(DynamicAttributeBindings, {
       if (this.change) {
         this.change(newDate);
       }
+    }).on('dp.show', e => {
+      if (this.show) {
+        this.show();
+      }
+    }).on('dp.hide', e => {
+      if (this.hide) {
+        this.hide();
+      }
     });
 
     this.addObserver('date', this, 'updateDate');

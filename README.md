@@ -38,6 +38,30 @@ Returns: `date`, `null`
 
 Fired when the date is changed.
 
+```handlebars
+{{bs-datetimepicker change=(action onChange)}}
+```
+
+#### hide
+
+Returns: `null`
+
+Fired when the date picker is hidden.
+
+```handlebars
+{{bs-datetimepicker hide=(action onHide)}}
+```
+
+#### show
+
+Returns: `null`
+
+Fired when the date picker is shown.
+
+```handlebars
+{{bs-datetimepicker show=(action onShow)}}
+```
+
 
 
 ### Available options
