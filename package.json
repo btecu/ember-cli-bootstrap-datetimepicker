@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-bootstrap-datetimepicker",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Date and time picker component for Ember CLI based on bootstrap-datetimepicker.",
   "keywords": [
     "ember-addon",
@@ -64,7 +64,7 @@
     "qunit-dom": "^0.9.2"
   },
   "engines": {
-    "node": "8.* || 10.* || 12.* || 14.* || 16.*"
+    "node": "12.* || 14.* || 16.* || 18.* || 20.*"
   },
   "ember-addon": {
     "after": [
